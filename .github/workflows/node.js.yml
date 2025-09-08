@@ -26,15 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Start MySQL
-        uses: mysql/mysql-server@main
-        with:
-          mysql-version: '8.0'
-          root-password: root
-          database: cicdtest
-
-      - name: Import SQL
+      - name: Set up MySQL
         run: |
+          sudo apt-get update
+          sudo apt-get install -y mysql-client
           mysql -h 127.0.0.1 -uroot -proot < db/create-db.sql
 
       - name: Use Node.js ${{ matrix.node-version }}
