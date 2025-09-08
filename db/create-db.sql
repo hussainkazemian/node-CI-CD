@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS cicdtest;
 CREATE DATABASE cicdtest;
-CREATE USER 'husu'@'localhost' IDENTIFIED BY '123456'
+CREATE USER 'husu'@'localhost' IDENTIFIED BY '123456';
 GRANT ALL PRIVILEGES ON `cicdtest`.* TO 'husu'@'localhost';
 FLUSH PRIVILEGES;
 
@@ -19,6 +19,4 @@ ALTER TABLE `students`
 ALTER TABLE `students`
   MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
-
-
 
