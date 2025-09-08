@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS cicdtest;
 CREATE DATABASE cicdtest;
-CREATE USER 'husu'@'localhost' IDENTIFIED BY 'NuPass0987'
+CREATE USER 'husu'@'localhost' IDENTIFIED BY '123456'
 GRANT ALL PRIVILEGES ON `cicdtest`.* TO 'husu'@'localhost';
 FLUSH PRIVILEGES;
 
