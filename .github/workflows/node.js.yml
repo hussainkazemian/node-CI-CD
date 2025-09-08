@@ -30,7 +30,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y mysql-client
-          mysql -h 127.0.0.1 -uroot -proot < db/create-db.sql
+          echo "[client]" > ~/.my.cnf
+          echo "user=root" >> ~/.my.cnf
+          echo "password=root" >> ~/.my.cnf
+          echo "host=127.0.0.1" >> ~/.my.cnf
+          chmod 600 ~/.my.cnf
+          mysql < db/create-db.sql
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
